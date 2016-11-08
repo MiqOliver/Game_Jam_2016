@@ -14,4 +14,9 @@ public static class InputManager {
     {
         return Input.touchCount > 0 && Input.GetTouch(0).position.x < Screen.width / 2;
     }
+
+    public static bool Touch()
+    {
+        return Input.touchCount > 0;
+    }
 }
