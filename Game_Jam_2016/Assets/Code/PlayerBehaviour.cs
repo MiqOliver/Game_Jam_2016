@@ -17,6 +17,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public float lateralAcceleration;
     public float recoverPosSpeed;
 
+    public Animator myAnimator;
+
     #endregion
 
     // Use this for initialization
@@ -27,11 +29,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Start () {
         movement = Vector3.zero;
+        myAnimator = GetComponent<Animator>();
         initialPosition = new Vector3(0, 1, 0);
         if (state == PlayerState.SPLITTED)
         {
 
-        }
+        }        
 	}
 	
 	// Update is called once per frame
@@ -73,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
         else if (other.transform.tag == "Platform")
         {
-
+            myAnimator.SetTrigger("Crash");
         }
 
         else if (other.transform.tag == "Player" && this.transform.name == "Player_0")
@@ -143,7 +146,7 @@ public class PlayerBehaviour : MonoBehaviour {
         player.GetComponent<PlayerBehaviour>().state = PlayerState.PLAYING;
         player.GetComponent<Rigidbody2D>().freezeRotation = true;
         player.GetComponent<Rigidbody2D>().gravityScale = 0;
-        player.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, 1);
+        player.GetComponent<Transform>().localScale = new Vector3(0.4f, 0.4f, 1);
 
         Destroy(this.gameObject);
         Destroy(other.gameObject);
