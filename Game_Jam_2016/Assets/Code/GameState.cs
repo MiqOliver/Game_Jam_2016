@@ -3,18 +3,16 @@ using System.Collections;
 
 public class GameState : MonoBehaviour {
 
-
-    private static int caseSwitch = 3;
-    public float moreSpeed;
+    public float addSpeed;
 
     // Use this for initialization
     void Start () {
-        MoreSpeed();
+        AddSpeed();
 	}
 
-    void MoreSpeed()
+    void AddSpeed()
     {
-        moreSpeed += 1f;
-        Invoke("MoreSpeed", 3);
+        addSpeed += 1f;
+        Invoke("AddSpeed", 3);
     }
 }

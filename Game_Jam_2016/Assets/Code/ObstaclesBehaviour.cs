@@ -13,7 +13,7 @@ public class ObstaclesBehaviour : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         GameObject gameState = GameObject.Find("GameState");
         scriptGameState = gameState.GetComponent<GameState>();
-        speed += scriptGameState.moreSpeed;
+        speed += scriptGameState.addSpeed;
 	}
 	
 	// Update is called once per frame
