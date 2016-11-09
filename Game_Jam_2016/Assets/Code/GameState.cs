@@ -5,28 +5,16 @@ public class GameState : MonoBehaviour {
 
 
     private static int caseSwitch = 3;
+    public float moreSpeed;
 
     // Use this for initialization
     void Start () {
-   
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        State();
+        MoreSpeed();
 	}
 
-    void State()
+    void MoreSpeed()
     {
-        switch (caseSwitch)
-        {
-            case 1: //menu
-                break;
-            case 2: //pause
-                break;
-            case 3: //game
-               
-                break;
-        }
+        moreSpeed += 1f;
+        Invoke("MoreSpeed", 3);
     }
 }

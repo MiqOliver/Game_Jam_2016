@@ -7,29 +7,33 @@ public class GenerateMapObstacles : MonoBehaviour {
 
     //objects
     public GameObject[] objs;
-    private float lastPositionSpawnObstacles;
-    private int distanceYBetween;
-    public int distanceYBetweenMin = 5;
-    public int distanceYBetweenMax = 10;
- 
-	void Awake()
+
+    private float distanceXBetween;
+    public float distanceXBetweenMin;
+    public float distanceXBetweenMax;
+
+    public float minTime;
+    public float maxTime;
+
+    void Awake()
     {
-        lastPositionSpawnObstacles = transform.position.y;
-        distanceYBetween = Random.Range(distanceYBetweenMin, distanceYBetweenMax);
+        distanceXBetween = Random.Range(distanceXBetweenMin, distanceXBetweenMax);
     }
-    
-	// Update is called once per frame
-	void Update () {
+
+    void Start()
+    {
         GenerateObstacles();
+    }
+
+    // Update is called once per frame
+    void Update () {
+     
     }
 
     void GenerateObstacles()
     {
-        if ((lastPositionSpawnObstacles - transform.position.y) > distanceYBetween)
-        {
-            Instantiate(objs[Random.Range(0, objs.Length)], transform.position, Quaternion.identity);
-            lastPositionSpawnObstacles = transform.position.y;
-            distanceYBetween = Random.Range(distanceYBetweenMin, distanceYBetweenMax);
-        }
+          Instantiate(objs[Random.Range(0, objs.Length)], transform.position + new Vector3(distanceXBetween,0,0), Quaternion.identity);
+          distanceXBetween = Random.Range(distanceXBetweenMin, distanceXBetweenMax);
+          Invoke("GenerateObstacles", Random.Range(minTime, maxTime));
     }
 }
