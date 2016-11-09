@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 258139097e4cbab4396be746ca436997
-timeCreated: 1478689574
+timeCreated: 1478711462
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,10 +12,14 @@ TextureImporter:
     21300010: Atlas_Jam_5
     21300012: Atlas_Jam_6
     21300014: Atlas_Jam_7
-    21300016: Atlas_Jam_9
-    21300018: Atlas_Jam_11
-    21300020: Atlas_Jam_13
-    21300022: Atlas_Jam_15
+    21300016: Atlas_Jam_8
+    21300018: Atlas_Jam_9
+    21300020: Atlas_Jam_10
+    21300022: Atlas_Jam_11
+    21300024: Atlas_Jam_12
+    21300026: Atlas_Jam_13
+    21300028: Atlas_Jam_14
+    21300030: Atlas_Jam_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -73,7 +77,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -86,7 +90,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -99,7 +103,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -112,7 +116,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -125,7 +129,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -138,7 +142,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -151,7 +155,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -169,7 +173,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atlas_Jam_9
+      name: Atlas_Jam_8
       rect:
         serializedVersion: 2
         x: 384
@@ -182,7 +186,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atlas_Jam_11
+      name: Atlas_Jam_9
       rect:
         serializedVersion: 2
         x: 640
@@ -195,7 +199,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atlas_Jam_13
+      name: Atlas_Jam_10
       rect:
         serializedVersion: 2
         x: 128
@@ -208,12 +212,64 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Atlas_Jam_15
+      name: Atlas_Jam_11
       rect:
         serializedVersion: 2
         x: 384
         y: 628
         width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Jam_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Jam_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 500
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Jam_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 500
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Atlas_Jam_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 500
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

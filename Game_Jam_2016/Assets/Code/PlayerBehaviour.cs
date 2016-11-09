@@ -33,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour {
         initialPosition = new Vector3(0, 1, 0);
         if (state == PlayerState.SPLITTED)
         {
-
+            myAnimator.SetTrigger("Split");
         }        
 	}
 	
@@ -55,6 +55,8 @@ public class PlayerBehaviour : MonoBehaviour {
             default:
                 break;
         }
+        myAnimator.ResetTrigger("Split");
+        myAnimator.ResetTrigger("Stop");
     }
 
     #region events
@@ -77,6 +79,7 @@ public class PlayerBehaviour : MonoBehaviour {
         else if (other.transform.tag == "Platform")
         {
             myAnimator.SetTrigger("Crash");
+            myAnimator.SetTrigger("Stop");
         }
 
         else if (other.transform.tag == "Player" && this.transform.name == "Player_0")
@@ -156,7 +159,7 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         other.transform.tag = "Circle";
 
-        for(int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
         {
             GameObject player;
             player = Instantiate(Resources.Load("Prefabs/Player"), this.transform.position, this.transform.rotation) as GameObject;
