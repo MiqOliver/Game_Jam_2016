@@ -95,7 +95,7 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (this.transform.position.y >= initialPosition.y)
         {
-            movement.y = -0.005f;
+            movement.y = -recoverPosSpeed;
         }
         else if (this.transform.position.y >= initialPosition.y)
         {
