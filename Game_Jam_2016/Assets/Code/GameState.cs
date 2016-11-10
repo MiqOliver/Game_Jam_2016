@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -16,5 +17,11 @@ public class GameState : MonoBehaviour
         }
         else if(speed > maxSpeed)
             speed = maxSpeed;
+
+        //Restarting Scene
+        if (GameObject.FindWithTag("Player") == null)
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
+        }
     }
 }

@@ -29,7 +29,7 @@ public class PlayerBehaviour : MonoBehaviour {
         state = PlayerState.PLAYING;
     }
 
-	void Start () {
+	void Start () { 
         movement = Vector3.zero;
         myAnimator = GetComponent<Animator>();
         initialPosition = new Vector3(0, 1, 0);
@@ -52,7 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
                 Movement();
                 break;
             case PlayerState.DEAD:
-                Destroy(this.gameObject);
+                Destroy(this.gameObject);                
                 break;
             default:
                 break;
