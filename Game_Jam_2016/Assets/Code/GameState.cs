@@ -14,7 +14,7 @@ public class GameState : MonoBehaviour
         {
             speed += addSpeed * Time.deltaTime;
         }
-        else
+        else if(speed > maxSpeed)
             speed = maxSpeed;
     }
 }
