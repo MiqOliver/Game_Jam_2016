@@ -16,8 +16,6 @@ public class PlayerBehaviour : MonoBehaviour {
     public float verticalLerpTime;
     public float lateralAcceleration;
     public float recoverPosSpeed;
-    public float rebound;
-    public float reboundLerpTime;
 
     public Animator myAnimator;
     public AudioSource jellyJoin;
@@ -87,20 +85,6 @@ public class PlayerBehaviour : MonoBehaviour {
             myAnimator.SetTrigger("Crash");
             myAnimator.SetTrigger("Stop");
         }
-
-        else if(other.transform.tag == "Circle")
-        {
-            foreach(ContactPoint2D contact in other.contacts)
-            {
-                movement.x += contact.normal.x;
-                movement.y += contact.normal.y;
-                movement = movement.normalized * rebound;
-
-                this.transform.position = Vector2.Lerp(this.transform.position, this.transform.position + movement, reboundLerpTime * Time.deltaTime);
-                movement = Vector3.zero;
-            }
-        }
-        
 
         else if (other.transform.tag == "Player" && this.transform.name == "Player_0")
         {
