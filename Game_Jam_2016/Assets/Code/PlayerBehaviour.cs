@@ -82,13 +82,16 @@ public class PlayerBehaviour : MonoBehaviour {
 
         else if (other.transform.tag == "Platform")
         {
+            jellyJoin.Play();
             myAnimator.SetTrigger("Crash");
             myAnimator.SetTrigger("Stop");
         }
 
         else if (other.transform.tag == "Player" && this.transform.name == "Player_0")
         {
+            jellyJoin.Play();
             Join(other.gameObject);
+
         }
     }
 
