@@ -94,6 +94,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D other)
     {
+        myAnimator.SetTrigger("Stop");
         if(other.transform.tag == "edge")
         {
             if((other.transform.position.x <= this.transform.position.x && movement.x < 0) || (other.transform.position.x >=  this.transform.position.x && movement.x > 0))
