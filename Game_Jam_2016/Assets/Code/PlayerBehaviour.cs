@@ -129,15 +129,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
     #region functions
 
-    //void UpdatePosY()
-    //{
-    //    if (this.transform.position.y != initialPosition.y)
-    //    {
-    //        Debug.Log("HI");
-    //        this.transform.Translate(this.transform.position.x, Mathf.Lerp(this.transform.position.y, initialPosition.y, verticalLerpTime * Time.deltaTime), this.transform.position.z);
-    //    }
-    //}
-
     void Movement()
     {
         if(InputManager.MoveLeft())
