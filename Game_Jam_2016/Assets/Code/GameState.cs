@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameState : MonoBehaviour {
+public class GameState : MonoBehaviour
+{
 
     public float addSpeed;
+    public float addSpeedMax;
+    public float speed;
 
-    // Use this for initialization
-    void Start () {
-        AddSpeed();
-	}
-
-    void AddSpeed()
+    void Update()
     {
-        addSpeed += 1f;
-        Invoke("AddSpeed", 3);
+        if (speed < addSpeedMax)
+        {
+            speed += addSpeed * Time.deltaTime;
+        }
     }
 }

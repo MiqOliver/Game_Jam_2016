@@ -25,15 +25,12 @@ public class GenerateMapObstacles : MonoBehaviour {
         GenerateObstacles();
     }
 
-    // Update is called once per frame
-    void Update () {
-     
-    }
-
     void GenerateObstacles()
     {
-          Instantiate(objs[Random.Range(0, objs.Length)], transform.position + new Vector3(distanceXBetween,0,0), Quaternion.identity);
-          distanceXBetween = Random.Range(distanceXBetweenMin, distanceXBetweenMax);
-          Invoke("GenerateObstacles", Random.Range(minTime, maxTime));
+
+        Instantiate(objs[Random.Range(0, objs.Length)], transform.position + new Vector3(distanceXBetween,0,0), Quaternion.identity);
+
+        distanceXBetween = Random.Range(distanceXBetweenMin, distanceXBetweenMax);
+        Invoke("GenerateObstacles", Random.Range(minTime, maxTime));
     }
 }

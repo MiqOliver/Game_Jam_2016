@@ -7,12 +7,12 @@ public static class InputManager {
 
     public static bool MoveRight()
     {
-        return Input.touchCount > 0 && Input.GetTouch(0).position.x > Screen.width / 2;
+        return (Input.touchCount > 0 && Input.GetTouch(0).position.x > Screen.width / 2) || Input.GetKey(KeyCode.D);
     }
 
     public static bool MoveLeft()
     {
-        return Input.touchCount > 0 && Input.GetTouch(0).position.x < Screen.width / 2;
+        return (Input.touchCount > 0 && Input.GetTouch(0).position.x < Screen.width / 2) || Input.GetKey(KeyCode.A);
     }
 
     public static bool Touch()

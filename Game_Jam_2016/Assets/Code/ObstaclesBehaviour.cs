@@ -4,7 +4,6 @@ using System.Collections;
 public class ObstaclesBehaviour : MonoBehaviour {
 
     private Rigidbody2D rb2d;
-    public float speed;
 
     private GameState scriptGameState;
 
@@ -13,12 +12,11 @@ public class ObstaclesBehaviour : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         GameObject gameState = GameObject.Find("GameState");
         scriptGameState = gameState.GetComponent<GameState>();
-        speed += scriptGameState.addSpeed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
-        rb2d.velocity = Vector3.up *speed;
+
+        rb2d.velocity = Vector3.up * scriptGameState.speed;
     }
 }
