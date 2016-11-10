@@ -18,6 +18,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public float recoverPosSpeed;
 
     public Animator myAnimator;
+    public AudioSource jellyJoin;
+
 
     #endregion
 
@@ -28,11 +30,13 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
 	void Start () {
+        AudioSource splitSound = GetComponent<AudioSource>();
         movement = Vector3.zero;
         myAnimator = GetComponent<Animator>();
         initialPosition = new Vector3(0, 1, 0);
         if (state == PlayerState.SPLITTED)
         {
+            splitSound.Play();
             myAnimator.SetTrigger("Split");
         }        
 	}
