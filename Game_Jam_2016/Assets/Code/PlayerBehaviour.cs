@@ -30,13 +30,11 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
 	void Start () {
-        AudioSource splitSound = GetComponent<AudioSource>();
         movement = Vector3.zero;
         myAnimator = GetComponent<Animator>();
         initialPosition = new Vector3(0, 1, 0);
         if (state == PlayerState.SPLITTED)
         {
-            splitSound.Play();
             myAnimator.SetTrigger("Split");
         }        
 	}
@@ -89,7 +87,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
         else if (other.transform.tag == "Player" && this.transform.name == "Player_0")
         {
-            jellyJoin.Play();
             Join(other.gameObject);
 
         }
