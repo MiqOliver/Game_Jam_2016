@@ -5,14 +5,16 @@ public class GameState : MonoBehaviour
 {
 
     public float addSpeed;
-    public float addSpeedMax;
+    public float maxSpeed;
     public float speed;
 
     void Update()
     {
-        if (speed < addSpeedMax)
+        if (speed <= maxSpeed)
         {
             speed += addSpeed * Time.deltaTime;
         }
+        else
+            speed = maxSpeed;
     }
 }
