@@ -38,8 +38,9 @@ public class PlayerBehaviour : MonoBehaviour {
         if (state == PlayerState.SPLITTED)
         {
             myAnimator.SetTrigger("Split");
-        }        
-	}
+        }
+        StartCoroutine(UpdatePosY());
+    }
 	
 	// Update is called once per frame
 	void Update () {

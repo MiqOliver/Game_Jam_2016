@@ -19,7 +19,7 @@ public class GameState : MonoBehaviour
 
     void Update()
     {
-        if (speed <= maxSpeed)
+        if (speed < maxSpeed)
         {
             speed += addSpeed * Time.deltaTime;
         }
