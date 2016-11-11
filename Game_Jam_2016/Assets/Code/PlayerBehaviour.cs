@@ -80,6 +80,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
+
+        this.GetComponent<Rigidbody2D>().velocity = other.gameObject.GetComponent<Rigidbody2D>().velocity;
         if (other.transform.tag == "Triangle")
         {
             switch (state)
@@ -132,11 +134,14 @@ public class PlayerBehaviour : MonoBehaviour {
             if((other.transform.position.x <= this.transform.position.x && movement.x < 0) || (other.transform.position.x >=  this.transform.position.x && movement.x > 0))
                 movement.x = 0;
         }
+
+        this.GetComponent<Rigidbody2D>().velocity = other.gameObject.GetComponent<Rigidbody2D>().velocity;
     }
 
     void OnCollisionExit2D(Collision2D other)
     {
         StartCoroutine(UpdatePosY());
+        this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
     #endregion
