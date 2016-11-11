@@ -1,0 +1,34 @@
+Jelly the jelly
+
+Installation:
+Download the APK file to your android phone and install it.
+Then its ready to play!
+
+How to Play:
+Tapping the right side moves right
+Tapping the left side moves left
+your objective is to fall as far as possible, and use your movement
+to dodge the obstacles on your way down.
+
+Desc:
+Jelly the jelly is an "easy to learn, fun to master" infinite faller, that tests
+the players abillity to think on the fly. You will be tasked of taking control
+of a gelatin qube, as it falls down an infinite well. But be careful, on your
+way you will face dangers like deadly spikes, solid platforms and an ever
+accelarating gravity. Armed with nothing but your own wit and the
+ability to fall left or right, how far can you get? Will you find the bottom
+of this seemingly endless pit, or will you sucumb to gravity like so many
+others have before you?
+
+Topics:
+Gelatin
+
+Company:
+Concrete Studios Inc
+
+Members of Group 18:
+Bertil Løvetand Levy (Bertil.Lovetand@gmail.com)
+Miquel Oliver (molivertauler@gmail.com)
+Miquel Postigo Llabres (miquelpostigo@gmail.com)
+Marc Segarra Sanahuja (marcssegarra@gmail.comm)
+Kasper Svendsen (kasperhunnerup@hotmail.dk
