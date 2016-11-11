@@ -4,6 +4,7 @@ using System.Collections;
 public class GenerateMapObstacles : MonoBehaviour {
 
     public GameObject player;
+    private PlayerBehaviour ply;
 
     //objects
     public GameObject[] objs;
@@ -18,6 +19,8 @@ public class GenerateMapObstacles : MonoBehaviour {
     private int count;
     private float extraTime;
 
+    private bool once;
+
     void Awake()
     {
         distanceXBetween = Random.Range(distanceXBetweenMin, distanceXBetweenMax);
@@ -26,8 +29,20 @@ public class GenerateMapObstacles : MonoBehaviour {
     void Start()
     {
         extraTime = 0;
-        GenerateObstacles();
+        GameObject player = GameObject.FindWithTag("Player");
+        ply = player.GetComponent<PlayerBehaviour>();
+        once = false;
+                
     } 
+
+    void Update()
+    {
+        if (ply.state == PlayerBehaviour.PlayerState.PLAYING && !once)
+        {
+            GenerateObstacles();
+            once = true;
+        }
+    }
 
     IEnumerator ShootAnother(float s)
     {

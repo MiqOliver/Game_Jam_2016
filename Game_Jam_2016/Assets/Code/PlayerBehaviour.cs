@@ -5,12 +5,14 @@ public class PlayerBehaviour : MonoBehaviour {
 
     #region variables
 
-    enum PlayerState { INIT, PLAYING, SPLITTED, DEAD };
+    public enum PlayerState { INIT, PLAYING, SPLITTED, DEAD };
 
     private Vector3 movement;
     private Vector3 initialPosition;
     private bool splitted;
-    private PlayerState state;
+    public  PlayerState state;
+
+    public bool onTitle;
 
     public float horizontalLerpTime;
     public float verticalLerpTime;
@@ -28,12 +30,14 @@ public class PlayerBehaviour : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-        state = PlayerState.PLAYING;
+        state = PlayerState.INIT;
     }
 
-	void Start () { 
+	void Start () {
+        onTitle = false;
         movement = Vector3.zero;
         myAnimator = GetComponent<Animator>();
+        myAnimator.SetBool("Quiet", true);
         initialPosition = new Vector3(0, 1, 0);
         if (state == PlayerState.SPLITTED)
         {
@@ -47,11 +51,18 @@ public class PlayerBehaviour : MonoBehaviour {
         switch (state)
         {
             case PlayerState.INIT:
+                if (InputManager.Touch() || Input.GetKey(KeyCode.S))
+                {
+                    state = PlayerState.PLAYING;
+                }
                 break;
             case PlayerState.PLAYING:
+                myAnimator.SetBool("Quiet", false);
+                onTitle = false;
                 Movement();
                 break;
             case PlayerState.SPLITTED:
+                myAnimator.SetBool("Quiet", false);
                 Movement();
                 break;
             case PlayerState.DEAD:
@@ -62,6 +73,7 @@ public class PlayerBehaviour : MonoBehaviour {
         }
         myAnimator.ResetTrigger("Split");
         myAnimator.ResetTrigger("Stop");
+        
     }
 
     #region events
@@ -95,6 +107,12 @@ public class PlayerBehaviour : MonoBehaviour {
 
         else if (other.transform.tag == "Platform" && other.transform.position.y < this.transform.position.y)
         {
+            if (state == PlayerState.INIT)
+            {
+                onTitle = true;
+                Debug.Log("onTitle");
+            }
+
             jellyJoin.Play();
             myAnimator.SetTrigger("Crash");
             myAnimator.SetTrigger("Stop");
@@ -109,7 +127,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D other)
     {
-        myAnimator.SetTrigger("Stop");
         if(other.transform.tag == "edge")
         {
             if((other.transform.position.x <= this.transform.position.x && movement.x < 0) || (other.transform.position.x >=  this.transform.position.x && movement.x > 0))

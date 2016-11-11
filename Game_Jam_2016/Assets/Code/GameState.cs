@@ -8,6 +8,9 @@ public class GameState : MonoBehaviour
     public float maxSpeed;
     public float speed;
 
+    private PlayerBehaviour ply;
+    private ObstaclesBehaviour tit;
+
     public GUIText scoreText;
     private int score;
 
@@ -23,6 +26,7 @@ public class GameState : MonoBehaviour
         {
             speed += addSpeed * Time.deltaTime;
         }
+
         else if(speed > maxSpeed)
             speed = maxSpeed;
 
